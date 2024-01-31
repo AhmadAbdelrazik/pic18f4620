@@ -8,9 +8,6 @@
  */
 #include "main.h"
 
-#define RED_LIGHT PIN0, PORTC_INDEX
-#define YELLOW_LIGHT PIN1, PORTC_INDEX
-#define GREEN_LIGHT PIN2, PORTC_INDEX
 
 Std_ReturnType ret = E_OK;
 

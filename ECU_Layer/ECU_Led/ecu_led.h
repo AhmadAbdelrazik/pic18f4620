@@ -21,15 +21,40 @@
 /** Section : Function Declarations **/
 
 /**
- * @brief 
+ * @brief Initialize the led 
  * 
- * @param pin 
- * @param port 
- * @return Std_ReturnType 
+ * @param pin : Pin number 
+ * @param port : Port Number
+ * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
 Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
+
+
+/**
+ * @brief Turn the led on
+ * 
+ * @param pin : Pin number 
+ * @param port : Port Number
+ * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
+ */
 Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
+
+/**
+ * @brief Turn the led off
+ * 
+ * @param pin : Pin number 
+ * @param port : Port Number
+ * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
+ */
 Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
+
+/**
+ * @brief Toggle the Led
+ * 
+ * @param pin : Pin number 
+ * @param port : Port Number
+ * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
+ */
 Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port);
 
 
