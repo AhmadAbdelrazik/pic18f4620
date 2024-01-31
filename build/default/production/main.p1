@@ -1,21 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"79 ./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h
-[; ;./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h: 79: Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
-[v _hal_gpio_port_init `(uc ~T0 @X0 0 ef2`uc`uc ]
-"13 main.c
-[; ;main.c: 13:     ret = hal_gpio_port_init(PORTC_INDEX, GPIO_OUTPUT);
+"30 ./ECU_Layer/ECU_Led/ecu_led.h
+[; ;./ECU_Layer/ECU_Led/ecu_led.h: 30: Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
+[v _ecu_led_init `(uc ~T0 @X0 0 ef2`uc`uc ]
+"18 main.c
+[; ;main.c: 18:     ret = ecu_led_init(PIN0, PORTC_INDEX);
+[c E2820 0 1 2 3 4 5 6 7 .. ]
+[n E2820 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
 [c E2813 0 1 2 3 4 .. ]
 [n E2813 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E2830 0 1 .. ]
-[n E2830 . GPIO_OUTPUT GPIO_INPUT  ]
-"82 ./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h
-[; ;./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h: 82: Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
-[v _hal_gpio_port_write `(uc ~T0 @X0 0 ef2`uc`uc ]
-"14 main.c
-[; ;main.c: 14:     ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_HIGH);
-[c E2834 0 1 .. ]
-[n E2834 . OUTPUT_LOGIC_LOW OUTPUT_LOGIC_HIGH  ]
+"31 ./ECU_Layer/ECU_Led/ecu_led.h
+[; ;./ECU_Layer/ECU_Led/ecu_led.h: 31: Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
+[v _ecu_led_on `(uc ~T0 @X0 0 ef2`uc`uc ]
+"32
+[; ;./ECU_Layer/ECU_Led/ecu_led.h: 32: Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
+[v _ecu_led_off `(uc ~T0 @X0 0 ef2`uc`uc ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
@@ -431,54 +430,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 main.c
-[; ;main.c: 10: Std_ReturnType ret = (Std_ReturnType)0x00;
+"15 main.c
+[; ;main.c: 15: Std_ReturnType ret = (Std_ReturnType)0x00;
 [v _ret `uc ~T0 @X0 1 e ]
 [i _ret
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12
-[; ;main.c: 12: int main() {
+"17
+[; ;main.c: 17: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"13
-[; ;main.c: 13:     ret = hal_gpio_port_init(PORTC_INDEX, GPIO_OUTPUT);
-[e = _ret ( _hal_gpio_port_init (2 , -> . `E2813 2 `uc -> . `E2830 0 `uc ]
-"14
-[; ;main.c: 14:     ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_HIGH);
-[e = _ret ( _hal_gpio_port_write (2 , -> . `E2813 2 `uc -> . `E2834 1 `uc ]
-"16
-[; ;main.c: 16:     while(1)
-[e :U 275 ]
-"17
-[; ;main.c: 17:     {
-{
 "18
-[; ;main.c: 18:         ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_HIGH);
-[e = _ret ( _hal_gpio_port_write (2 , -> . `E2813 2 `uc -> . `E2834 1 `uc ]
+[; ;main.c: 18:     ret = ecu_led_init(PIN0, PORTC_INDEX);
+[e = _ret ( _ecu_led_init (2 , -> . `E2820 0 `uc -> . `E2813 2 `uc ]
 "19
-[; ;main.c: 19:         _delay((unsigned long)((200)*((2 *1000000UL)/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> * -> -> -> 2 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+[; ;main.c: 19:     ret = ecu_led_init(PIN2, PORTC_INDEX);
+[e = _ret ( _ecu_led_init (2 , -> . `E2820 2 `uc -> . `E2813 2 `uc ]
 "20
-[; ;main.c: 20:         ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_LOW);
-[e = _ret ( _hal_gpio_port_write (2 , -> . `E2813 2 `uc -> . `E2834 0 `uc ]
-"21
-[; ;main.c: 21:         _delay((unsigned long)((200)*((2 *1000000UL)/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> * -> -> -> 2 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+[; ;main.c: 20:     ret = ecu_led_init(PIN1, PORTC_INDEX);
+[e = _ret ( _ecu_led_init (2 , -> . `E2820 1 `uc -> . `E2813 2 `uc ]
 "22
-[; ;main.c: 22:     }
+[; ;main.c: 22:     while(1) {
+[e :U 275 ]
+{
+"23
+[; ;main.c: 23:         ecu_led_on(PIN0, PORTC_INDEX);
+[e ( _ecu_led_on (2 , -> . `E2820 0 `uc -> . `E2813 2 `uc ]
+"24
+[; ;main.c: 24:         ecu_led_off(PIN2, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 2 `uc -> . `E2813 2 `uc ]
+"25
+[; ;main.c: 25:         ecu_led_off(PIN1, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 1 `uc -> . `E2813 2 `uc ]
+"26
+[; ;main.c: 26:         _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> * -> -> -> 2 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"27
+[; ;main.c: 27:         ecu_led_off(PIN0, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 0 `uc -> . `E2813 2 `uc ]
+"28
+[; ;main.c: 28:         ecu_led_off(PIN2, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 2 `uc -> . `E2813 2 `uc ]
+"29
+[; ;main.c: 29:         ecu_led_on(PIN1, PORTC_INDEX);
+[e ( _ecu_led_on (2 , -> . `E2820 1 `uc -> . `E2813 2 `uc ]
+"30
+[; ;main.c: 30:         _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> * -> -> -> 2 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"31
+[; ;main.c: 31:         ecu_led_off(PIN0, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 0 `uc -> . `E2813 2 `uc ]
+"32
+[; ;main.c: 32:         ecu_led_on(PIN2, PORTC_INDEX);
+[e ( _ecu_led_on (2 , -> . `E2820 2 `uc -> . `E2813 2 `uc ]
+"33
+[; ;main.c: 33:         ecu_led_off(PIN1, PORTC_INDEX);
+[e ( _ecu_led_off (2 , -> . `E2820 1 `uc -> . `E2813 2 `uc ]
+"34
+[; ;main.c: 34:         _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> * -> -> -> 2 `i `l `ul -> 1000000 `ul `d .4000.0 `ul ]
+"35
+[; ;main.c: 35:     }
 }
 [e :U 274 ]
 [e $U 275  ]
 [e :U 276 ]
-"23
-[; ;main.c: 23:     return (0);
+"37
+[; ;main.c: 37:     return (0);
 [e ) -> 0 `i ]
 [e $UE 273  ]
-"24
-[; ;main.c: 24: }
+"38
+[; ;main.c: 38: }
 [e :UE 273 ]
 }

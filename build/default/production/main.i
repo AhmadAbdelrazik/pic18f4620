@@ -14,10 +14,11 @@
 
 
 
+
 # 1 "./main.h" 1
-# 11 "./main.h"
+# 14 "./main.h"
 # 1 "./ECU_Layer/ECU_Led/ecu_led.h" 1
-# 11 "./ECU_Layer/ECU_Led/ecu_led.h"
+# 13 "./ECU_Layer/ECU_Led/ecu_led.h"
 # 1 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 1
 # 13 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 # 1 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../device_config.h" 1
@@ -4727,7 +4728,7 @@ typedef struct{
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config);
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
 Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
 
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
@@ -4735,23 +4736,41 @@ Std_ReturnType hal_gpio_port_get_direction(uint8 port, uint8 *output);
 Std_ReturnType hal_gpio_port_read(uint8 port, uint8 *output);
 Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
 Std_ReturnType hal_gpio_port_toggle(uint8 port);
-# 11 "./ECU_Layer/ECU_Led/ecu_led.h" 2
-# 11 "./main.h" 2
-# 8 "main.c" 2
+# 13 "./ECU_Layer/ECU_Led/ecu_led.h" 2
+# 30 "./ECU_Layer/ECU_Led/ecu_led.h"
+Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port);
+# 14 "./main.h" 2
+# 9 "main.c" 2
+
+
+
+
 
 
 Std_ReturnType ret = (Std_ReturnType)0x00;
 
 int main() {
-    ret = hal_gpio_port_init(PORTC_INDEX, GPIO_OUTPUT);
-    ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_HIGH);
+    ret = ecu_led_init(PIN0, PORTC_INDEX);
+    ret = ecu_led_init(PIN2, PORTC_INDEX);
+    ret = ecu_led_init(PIN1, PORTC_INDEX);
 
-    while(1)
-    {
-        ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_HIGH);
-        _delay((unsigned long)((200)*((2 *1000000UL)/4000.0)));
-        ret = hal_gpio_port_write(PORTC_INDEX, OUTPUT_LOGIC_LOW);
-        _delay((unsigned long)((200)*((2 *1000000UL)/4000.0)));
+    while(1) {
+        ecu_led_on(PIN0, PORTC_INDEX);
+        ecu_led_off(PIN2, PORTC_INDEX);
+        ecu_led_off(PIN1, PORTC_INDEX);
+        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+        ecu_led_off(PIN0, PORTC_INDEX);
+        ecu_led_off(PIN2, PORTC_INDEX);
+        ecu_led_on(PIN1, PORTC_INDEX);
+        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+        ecu_led_off(PIN0, PORTC_INDEX);
+        ecu_led_on(PIN2, PORTC_INDEX);
+        ecu_led_off(PIN1, PORTC_INDEX);
+        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
     }
+
     return (0);
 }

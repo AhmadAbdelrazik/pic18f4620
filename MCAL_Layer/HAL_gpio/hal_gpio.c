@@ -77,7 +77,7 @@ Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output)
 }
 
 
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config)
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic)
 {
     Std_ReturnType ret = E_OK;
     
@@ -86,12 +86,14 @@ Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config)
         ret = E_NOT_OK;
     else
     {
-        switch (pin_config->logic){
+        switch (logic) {
             case (OUTPUT_LOGIC_HIGH):
                 SET_BIT(*LAT[pin_config->port], pin_config->pin);
+                pin_config->logic = logic;
                 break;
             case (OUTPUT_LOGIC_LOW):
                 CLEAR_BIT(*LAT[pin_config->port], pin_config->pin);
+                pin_config->logic = logic;
                 break;
             default:
                 ret = E_NOT_OK;

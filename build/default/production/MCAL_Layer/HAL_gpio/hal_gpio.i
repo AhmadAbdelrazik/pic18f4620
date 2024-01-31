@@ -4716,7 +4716,7 @@ typedef struct{
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config);
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
 Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
 
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
@@ -4804,7 +4804,7 @@ Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output)
 }
 
 
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config)
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic)
 {
     Std_ReturnType ret = (Std_ReturnType)0x00;
 
@@ -4813,12 +4813,14 @@ Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config)
         ret = (Std_ReturnType)0x01;
     else
     {
-        switch (pin_config->logic){
+        switch (logic) {
             case (OUTPUT_LOGIC_HIGH):
                 (*LAT[pin_config->port] |= (1 << pin_config->pin));
+                pin_config->logic = logic;
                 break;
             case (OUTPUT_LOGIC_LOW):
                 (*LAT[pin_config->port] &= ~(1 << pin_config->pin));
+                pin_config->logic = logic;
                 break;
             default:
                 ret = (Std_ReturnType)0x01;

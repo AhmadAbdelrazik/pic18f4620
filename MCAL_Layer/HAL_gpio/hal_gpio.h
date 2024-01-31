@@ -73,7 +73,7 @@ typedef struct{
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
 Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config);
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
 Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
 
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);

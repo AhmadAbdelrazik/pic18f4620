@@ -1,8 +1,11 @@
-/* 
- * File:   main.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 11, 2024, 2:14 PM
+/**
+ * @file main.h
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * @brief 
+ * 
+ * @version 0.1
+ * @date 2024-01-30
+ * 
  */
 
 #ifndef MAIN_H
