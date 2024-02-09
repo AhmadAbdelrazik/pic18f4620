@@ -15,8 +15,8 @@ int main() {
 
     // Setup Code Here
 
-
     while(1) {
+        
         // Loop Code Here
     }
     

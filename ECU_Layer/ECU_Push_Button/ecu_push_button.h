@@ -29,8 +29,8 @@ typedef enum{
 
 typedef struct{
     pin_config_t button_pin;
-    button_state_t button_state : 1;
-    button_active_t button_connection : 1;
+    uint8 button_state : 1;
+    uint8 button_connection : 1;
     uint8 reserved : 6;
 }button_t;
 

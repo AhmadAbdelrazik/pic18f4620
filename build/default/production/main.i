@@ -4722,54 +4722,134 @@ typedef struct{
     uint8 direction : 1;
     uint8 logic : 1;
 }pin_config_t;
-
-
-
+# 80 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
-Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
-Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
-Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
 
+
+
+
+
+
+
+Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
+# 97 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
+# 107 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
+
+
+
+
+
+
+
+Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
+# 126 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
+# 135 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_get_direction(uint8 port, uint8 *output);
+# 144 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_read(uint8 port, uint8 *output);
+# 153 "./ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
+
+
+
+
+
+
+
 Std_ReturnType hal_gpio_port_toggle(uint8 port);
 # 13 "./ECU_Layer/ECU_Led/ecu_led.h" 2
 # 30 "./ECU_Layer/ECU_Led/ecu_led.h"
 Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
+# 40 "./ECU_Layer/ECU_Led/ecu_led.h"
 Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
+# 49 "./ECU_Layer/ECU_Led/ecu_led.h"
 Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
+# 58 "./ECU_Layer/ECU_Led/ecu_led.h"
 Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port);
 # 14 "./main.h" 2
+
+# 1 "./ECU_Layer/ECU_Push_Button/ecu_push_button.h" 1
+# 20 "./ECU_Layer/ECU_Push_Button/ecu_push_button.h"
+typedef enum{
+    BUTTON_PRESSED = 0,
+    BUTTON_RELEASED
+}button_state_t;
+
+typedef enum{
+    BUTTON_ACTIVE_HIGH = 0,
+    BUTTON_ACTIVE_LOW
+}button_active_t;
+
+typedef struct{
+    pin_config_t button_pin;
+    uint8 button_state : 1;
+    uint8 button_connection : 1;
+    uint8 reserved : 6;
+}button_t;
+
+
+
+
+
+Std_ReturnType ecu_push_button_initialize(const button_t *btn);
+Std_ReturnType ecu_push_button_read_state(const button_t *btn, button_state_t *btn_state);
+# 15 "./main.h" 2
 # 9 "main.c" 2
 
 
 
+button_t button_high = {
 
+    .button_pin.port = PORTC_INDEX,
+    .button_pin.pin = PIN3,
+    .button_pin.direction = GPIO_OUTPUT,
+    .button_pin.logic = OUTPUT_LOGIC_LOW,
 
+    .button_connection = BUTTON_ACTIVE_HIGH,
+    .button_state = BUTTON_RELEASED
+};
+
+button_t button_low = {
+
+    .button_pin.port = PORTC_INDEX,
+    .button_pin.pin = PIN4,
+    .button_pin.direction = GPIO_OUTPUT,
+    .button_pin.logic = OUTPUT_LOGIC_HIGH,
+
+    .button_connection = BUTTON_ACTIVE_LOW,
+    .button_state = BUTTON_RELEASED
+};
 
 Std_ReturnType ret = (Std_ReturnType)0x00;
 
 int main() {
-    ret = ecu_led_init(PIN0, PORTC_INDEX);
-    ret = ecu_led_init(PIN2, PORTC_INDEX);
-    ret = ecu_led_init(PIN1, PORTC_INDEX);
 
+
+
+    ecu_push_button_initialize(&button_low);
+    ecu_led_init(PIN0, PORTC_INDEX);
+    ecu_led_init(PIN1, PORTC_INDEX);
+    ecu_led_init(PIN2, PORTC_INDEX);
+    button_state_t btn = BUTTON_RELEASED;
     while(1) {
-        ecu_led_on(PIN0, PORTC_INDEX);
-        ecu_led_off(PIN2, PORTC_INDEX);
-        ecu_led_off(PIN1, PORTC_INDEX);
-        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
-        ecu_led_off(PIN0, PORTC_INDEX);
-        ecu_led_off(PIN2, PORTC_INDEX);
-        ecu_led_on(PIN1, PORTC_INDEX);
-        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
-        ecu_led_off(PIN0, PORTC_INDEX);
-        ecu_led_on(PIN2, PORTC_INDEX);
-        ecu_led_off(PIN1, PORTC_INDEX);
-        _delay((unsigned long)((1000)*((2 *1000000UL)/4000.0)));
+        ecu_push_button_read_state(&button_low, &btn);
+        if (btn == BUTTON_PRESSED)
+            {
+            ecu_led_on(PIN0, PORTC_INDEX);
+            ecu_led_on(PIN1, PORTC_INDEX);
+            ecu_led_on(PIN2, PORTC_INDEX);
+            }
+        else if (btn == BUTTON_RELEASED)
+        {
+            ecu_led_off(PIN0, PORTC_INDEX);
+            ecu_led_off(PIN1, PORTC_INDEX);
+            ecu_led_off(PIN2, PORTC_INDEX);
+        }
+        else { }
+
     }
 
     return (0);

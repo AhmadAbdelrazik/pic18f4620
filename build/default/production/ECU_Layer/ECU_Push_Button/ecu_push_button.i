@@ -1,4 +1,4 @@
-# 1 "ECU_Layer/ECU_Led/ecu_led.c"
+# 1 "ECU_Layer/ECU_Push_Button/ecu_push_button.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,17 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ECU_Layer/ECU_Led/ecu_led.c" 2
+# 1 "ECU_Layer/ECU_Push_Button/ecu_push_button.c" 2
+# 11 "ECU_Layer/ECU_Push_Button/ecu_push_button.c"
+# 1 "ECU_Layer/ECU_Push_Button/ecu_push_button.h" 1
+# 16 "ECU_Layer/ECU_Push_Button/ecu_push_button.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 1
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../device_config.h" 1
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
 
-# 1 "ECU_Layer/ECU_Led/ecu_led.h" 1
-# 13 "ECU_Layer/ECU_Led/ecu_led.h"
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 1
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../device_config.h" 1
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
-
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../compiler.h" 1
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../compiler.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../compiler.h" 1
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4496,13 +4496,13 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../compiler.h" 2
-# 14 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../compiler.h" 2
+# 14 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
 
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_types.h" 1
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_types.h"
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_libraries.h" 1
-# 11 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_libraries.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_types.h" 1
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_types.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_libraries.h" 1
+# 11 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4655,8 +4655,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_libraries.h" 2
-# 13 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/../std_types.h" 2
+# 11 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_libraries.h" 2
+# 13 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/../std_types.h" 2
 
 
 
@@ -4673,11 +4673,11 @@ typedef signed long sint32;
 typedef signed long long sint64;
 
 typedef uint8 Std_ReturnType;
-# 15 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
+# 15 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
 
-# 1 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio_cfg.h" 1
-# 16 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
-# 35 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 1 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio_cfg.h" 1
+# 16 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h" 2
+# 35 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 typedef enum{
     PORTA_INDEX = 0,
     PORTB_INDEX,
@@ -4713,7 +4713,7 @@ typedef struct{
     uint8 direction : 1;
     uint8 logic : 1;
 }pin_config_t;
-# 80 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 80 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
 
 
@@ -4723,9 +4723,9 @@ Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
 
 
 Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
-# 97 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 97 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-# 107 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 107 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
 
 
@@ -4735,13 +4735,13 @@ Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
 
 
 Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
-# 126 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 126 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
-# 135 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 135 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_get_direction(uint8 port, uint8 *output);
-# 144 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 144 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_read(uint8 port, uint8 *output);
-# 153 "ECU_Layer/ECU_Led/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
+# 153 "ECU_Layer/ECU_Push_Button/../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
 
 
@@ -4751,90 +4751,87 @@ Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
 
 
 Std_ReturnType hal_gpio_port_toggle(uint8 port);
-# 13 "ECU_Layer/ECU_Led/ecu_led.h" 2
-# 30 "ECU_Layer/ECU_Led/ecu_led.h"
-Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
-# 40 "ECU_Layer/ECU_Led/ecu_led.h"
-Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
-# 49 "ECU_Layer/ECU_Led/ecu_led.h"
-Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
-# 58 "ECU_Layer/ECU_Led/ecu_led.h"
-Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port);
-# 2 "ECU_Layer/ECU_Led/ecu_led.c" 2
+# 16 "ECU_Layer/ECU_Push_Button/ecu_push_button.h" 2
 
 
 
-Std_ReturnType ecu_led_init(uint8 pin, uint8 port) {
+
+typedef enum{
+    BUTTON_PRESSED = 0,
+    BUTTON_RELEASED
+}button_state_t;
+
+typedef enum{
+    BUTTON_ACTIVE_HIGH = 0,
+    BUTTON_ACTIVE_LOW
+}button_active_t;
+
+typedef struct{
+    pin_config_t button_pin;
+    uint8 button_state : 1;
+    uint8 button_connection : 1;
+    uint8 reserved : 6;
+}button_t;
+
+
+
+
+
+Std_ReturnType ecu_push_button_initialize(const button_t *btn);
+Std_ReturnType ecu_push_button_read_state(const button_t *btn, button_state_t *btn_state);
+# 11 "ECU_Layer/ECU_Push_Button/ecu_push_button.c" 2
+
+
+
+
+Std_ReturnType ecu_push_button_initialize(const button_t *btn) {
     Std_ReturnType ret = (Std_ReturnType)0x00;
 
-    if (pin >= 0x08 || port >= 0x05)
+    if (btn == ((void*)0)) {
         ret = (Std_ReturnType)0x01;
-    else {
-        pin_config_t led = {
-            .direction = GPIO_OUTPUT,
-            .logic = OUTPUT_LOGIC_LOW,
-            .pin = pin,
-            .port = port
-        };
-
-        ret = hal_gpio_pin_init(&led);
     }
-
-    return ret;
-}
-Std_ReturnType ecu_led_on(uint8 pin, uint8 port) {
-
-    Std_ReturnType ret = (Std_ReturnType)0x00;
-
-    if (pin >= 0x08 || port >= 0x05)
-        ret = (Std_ReturnType)0x01;
     else {
-        pin_config_t led = {
-            .direction = GPIO_OUTPUT,
-            .logic = OUTPUT_LOGIC_HIGH,
-            .pin = pin,
-            .port = port
-        };
-
-        ret = hal_gpio_pin_write(&led, led.logic);
-    }
-
-    return ret;
-}
-Std_ReturnType ecu_led_off(uint8 pin, uint8 port) {
-
-    Std_ReturnType ret = (Std_ReturnType)0x00;
-
-    if (pin >= 0x08 || port >= 0x05)
-        ret = (Std_ReturnType)0x01;
-    else {
-        pin_config_t led = {
-            .direction = GPIO_OUTPUT,
-            .logic = OUTPUT_LOGIC_LOW,
-            .pin = pin,
-            .port = port
-        };
-
-        ret = hal_gpio_pin_write(&led, led.logic);
+        ret = hal_gpio_pin_init(&(btn->button_pin));
     }
 
     return ret;
 }
 
-Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port) {
 
+Std_ReturnType ecu_push_button_read_state(const button_t *btn, button_state_t *btn_state) {
     Std_ReturnType ret = (Std_ReturnType)0x00;
+    logic_t pin_logic_status = OUTPUT_LOGIC_LOW;
 
-    if (pin >= 0x08 || port >= 0x05)
-        ret = (Std_ReturnType)0x01;
+
+    if (btn == ((void*)0) || btn_state == ((void*)0))
+        return (Std_ReturnType)0x01;
+    else { }
+
+
+    hal_gpio_pin_read(&(btn->button_pin), &(pin_logic_status));
+
+
+    if (btn->button_connection == BUTTON_ACTIVE_HIGH)
+    {
+        if (pin_logic_status == OUTPUT_LOGIC_HIGH)
+            *btn_state = BUTTON_PRESSED;
+        else if (pin_logic_status == OUTPUT_LOGIC_LOW)
+            *btn_state = BUTTON_RELEASED;
+        else
+            ret = (Std_ReturnType)0x01;
+    }
+
+    else if (btn->button_connection == BUTTON_ACTIVE_LOW)
+    {
+        if (pin_logic_status == OUTPUT_LOGIC_HIGH)
+            *btn_state = BUTTON_RELEASED;
+        else if (pin_logic_status == OUTPUT_LOGIC_LOW)
+            *btn_state = BUTTON_PRESSED;
+        else
+            ret = (Std_ReturnType)0x01;
+    }
     else {
-        pin_config_t led = {
-            .direction = GPIO_OUTPUT,
-            .pin = pin,
-            .port = port
-        };
-
-        ret = hal_gpio_pin_toggle(&led);
+        ret = (Std_ReturnType)0x01;
     }
 
     return ret;

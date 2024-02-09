@@ -4710,19 +4710,43 @@ typedef struct{
     uint8 direction : 1;
     uint8 logic : 1;
 }pin_config_t;
-
-
-
+# 80 "MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_pin_init(pin_config_t *pin_config);
-Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
-Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
-Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
-Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
 
+
+
+
+
+
+
+Std_ReturnType hal_gpio_pin_get_direction(pin_config_t *pin_config);
+# 97 "MCAL_Layer/HAL_gpio/hal_gpio.h"
+Std_ReturnType hal_gpio_pin_read(pin_config_t *pin_config, uint8 *output);
+# 107 "MCAL_Layer/HAL_gpio/hal_gpio.h"
+Std_ReturnType hal_gpio_pin_write(pin_config_t *pin_config, uint8 logic);
+
+
+
+
+
+
+
+Std_ReturnType hal_gpio_pin_toggle(pin_config_t *pin_config);
+# 126 "MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_init(uint8 port, uint8 direction);
+# 135 "MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_get_direction(uint8 port, uint8 *output);
+# 144 "MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_read(uint8 port, uint8 *output);
+# 153 "MCAL_Layer/HAL_gpio/hal_gpio.h"
 Std_ReturnType hal_gpio_port_write(uint8 port, uint8 logic);
+
+
+
+
+
+
+
 Std_ReturnType hal_gpio_port_toggle(uint8 port);
 # 1 "MCAL_Layer/HAL_gpio/hal_gpio.c" 2
 
