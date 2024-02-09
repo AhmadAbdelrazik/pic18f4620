@@ -7,6 +7,7 @@
         "std_types.h": "c",
         "pic18f4620.h": "c",
         "device_config.h": "c",
-        "std_libraries.h": "c"
+        "std_libraries.h": "c",
+        "__at.h": "c"
     }
 }
