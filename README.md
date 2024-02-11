@@ -1,10 +1,10 @@
-# PIC18F4620H MCAL and ECU Layers
+# PIC18F4620 MCAL and ECU Layers
 
-This project provides the Microcontroller Abstraction Layer (MCAL) and Electronic Control Unit (ECU) layers for the PIC18F4620H microcontroller. These layers facilitate the development of embedded software for controlling various electronic systems and peripherals.
+This project provides the Microcontroller Abstraction Layer (MCAL) and Electronic Control Unit (ECU) layers for the PIC18F4620 microcontroller. These layers facilitate the development of embedded software for controlling various electronic systems and peripherals.
 
 ## Overview
 
-- **MCAL (Microcontroller Abstraction Layer)**: The MCAL layer provides a hardware abstraction interface for accessing the features and peripherals of the PIC18F4620H microcontroller. It includes drivers and low-level functions for managing GPIO (General Purpose Input/Output),
+- **MCAL (Microcontroller Abstraction Layer)**: The MCAL layer provides a hardware abstraction interface for accessing the features and peripherals of the PIC18F4620 microcontroller. It includes drivers and low-level functions for managing GPIO (General Purpose Input/Output),
 
 ==to be implemented==
 
@@ -16,7 +16,7 @@ This project provides the Microcontroller Abstraction Layer (MCAL) and Electroni
 
 ## Features
 
-- Comprehensive support for the PIC18F4620H microcontroller features and peripherals.
+- Comprehensive support for the PIC18F4620 microcontroller features and peripherals.
 - Well-defined APIs for easy integration and development of application-specific functionalities.
 - Modular architecture facilitating code reuse, scalability, and maintainability.
 - Optimized for performance and efficiency in resource-constrained embedded systems.
