@@ -1,8 +1,14 @@
-/* 
- * File:   hal_gpio_cfg.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 12, 2024, 12:33 AM
+/**
+ * @file hal_gpio_cfg.h
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-01-12
+ * 
+ * @brief 
  */
 
 #ifndef HAL_GPIO_CFG_H

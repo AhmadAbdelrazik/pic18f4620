@@ -1,13 +1,15 @@
 /**
  * @file ECU_layer_init.c
- * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
- * @brief 
  * 
- * @version 0.1
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
  * @date 2024-02-11
  * 
+ * @brief 
  */
-
 
 /********* Section : Includes ************/
 

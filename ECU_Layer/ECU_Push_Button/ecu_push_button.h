@@ -1,11 +1,14 @@
 /**
  * @file ecu_push_button.h
- * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
- * @brief 
  * 
- * @version 0.1
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
  * @date 2024-01-31
  * 
+ * @brief 
  */
 
 #ifndef ECU_PUSH_BUTTON_H

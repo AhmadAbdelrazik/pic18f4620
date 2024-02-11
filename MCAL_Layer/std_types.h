@@ -1,8 +1,14 @@
-/* 
- * File:   std_types.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 11, 2024, 2:17 PM
+/**
+ * @file std_types.h
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-01-11
+ * 
+ * @brief 
  */
 
 #ifndef STD_TYPES_H

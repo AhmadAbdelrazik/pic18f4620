@@ -1,3 +1,16 @@
+/**
+ * @file hal_gpio.c
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-01-11
+ * 
+ * @brief 
+ */
+
 #include "hal_gpio.h"
 
 

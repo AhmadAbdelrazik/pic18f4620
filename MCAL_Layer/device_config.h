@@ -1,8 +1,14 @@
-/* 
- * File:   device_config.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 11, 2024, 2:16 PM
+/**
+ * @file device_config.h
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-01-11
+ * 
+ * @brief 
  */
 
 #ifndef DEVICE_CONFIG_H

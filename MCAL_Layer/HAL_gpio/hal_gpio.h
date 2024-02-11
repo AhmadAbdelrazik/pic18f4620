@@ -1,8 +1,14 @@
-/* 
- * File:   hal_gpio.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 11, 2024, 2:24 PM
+/**
+ * @file hal_gpio.h
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-01-11
+ * 
+ * @brief 
  */
 
 #ifndef HAL_GPIO_H
