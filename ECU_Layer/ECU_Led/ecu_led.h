@@ -1,8 +1,14 @@
-/* 
- * File:   ecu_led.h
- * Author: Ahmed Abdelrazik
- *
- * Created on January 11, 2024, 2:20 PM
+/**
+ * @file ecu_led.h
+ * 
+ * @author Ahmad Abdelrazik (ahmadabdelrazik159@gmail.com)
+ * 
+ * @linkedin linkedin.com/in/ahmadabdelrazik/
+ * @github github.com/AhmadAbdelrazik/
+ * 
+ * @date 2024-02-11
+ * 
+ * @brief 
  */
 
 #ifndef ECU_LED_H
@@ -12,53 +18,52 @@
 
 #include "../../MCAL_Layer/HAL_gpio/hal_gpio.h"
 
+/** Section : Macros Definitions **/
+
 /** Section : Data Types **/
 
-/** Section : Macros Definitions **/
+typedef struct {
+    uint8 pin  : 4;
+    uint8 port : 4;
+}led_t;
+
 
 /** Section : Function-like Macros Definition **/
 
 /** Section : Function Declarations **/
 
 /**
- * @brief Initialize the led 
+ * @brief  Initialize the led
  * 
- * @param pin : Pin number 
- * @param port : Port Number
+ * @param led 
  * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
-Std_ReturnType ecu_led_init(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_init(led_t *led);
 
 
 /**
  * @brief Turn the led on
  * 
- * @param pin : Pin number 
- * @param port : Port Number
+ * @param led 
  * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
-Std_ReturnType ecu_led_on(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_on(led_t *led);
 
 /**
- * @brief Turn the led off
+ * @brief 
  * 
- * @param pin : Pin number 
- * @param port : Port Number
+ * @param led 
  * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
-Std_ReturnType ecu_led_off(uint8 pin, uint8 port);
+Std_ReturnType ecu_led_off(led_t *led);
 
 /**
  * @brief Toggle the Led
  * 
- * @param pin : Pin number 
- * @param port : Port Number
+ * @param led 
  * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
-Std_ReturnType ecu_led_toggle(uint8 pin, uint8 port);
-
-
-
+Std_ReturnType ecu_led_toggle(led_t *led);
 
 #endif	/* ECU_LED_H */
 
