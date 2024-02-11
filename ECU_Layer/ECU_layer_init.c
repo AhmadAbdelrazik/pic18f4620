@@ -8,7 +8,16 @@
  * 
  */
 
+
+/********* Section : Includes ************/
+
 #include "ECU_layer_init.h"
+
+/********* Section : Global variables ************/
+
+
+
+/********* Section : ECU Layer Initializatoin function ************/
 
 Std_ReturnType ecu_layer_initialize()
 {
