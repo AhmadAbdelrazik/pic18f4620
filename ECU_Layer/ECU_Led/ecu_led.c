@@ -41,7 +41,7 @@ Std_ReturnType ecu_led_on(led_t *led) {
     else {
         pin_config_t led_pin = {
             .direction = GPIO_OUTPUT,
-            .logic = OUTPUT_LOGIC_LOW,
+            .logic = OUTPUT_LOGIC_HIGH,
             .pin = (led->pin),
             .port = (led->port)
         };

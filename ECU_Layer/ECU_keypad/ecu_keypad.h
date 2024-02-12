@@ -47,7 +47,7 @@ Std_ReturnType ecu_keypad_initialize(const keypad_t *keypad);
  * @brief get the value pressed.
  * 
  * @param keypad 
- * @param value : store the value
+ * @param value : store the pressed value, return 0 if no button is pressed.
  * @return Std_ReturnType : E_OK if no errors, else E_NOT_OK
  */
 Std_ReturnType ecu_keypad_get_value(const keypad_t *keypad, uint8 *value);

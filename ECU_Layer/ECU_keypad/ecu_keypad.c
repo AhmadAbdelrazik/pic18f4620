@@ -15,7 +15,7 @@
 
 
 uint8 btn_values[ECU_KEYPAD_ROW][ECU_KEYPAD_COLUMN] = {
-                                                        {'7','8','9','#'},
+                                                        {'7','8','9','/'},
                                                         {'4','5','6','*'},
                                                         {'1','2','3','-'},
                                                         {'#','0','=','+'}
@@ -76,6 +76,7 @@ Std_ReturnType ecu_keypad_get_value(const keypad_t *keypad, uint8 *value)
 
     }
 
+    *value = 0;
 
     return ret;
 }
